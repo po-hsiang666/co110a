@@ -142,8 +142,9 @@ CHIP Mux16 {
     Mux(a=a[15],b=b[15],sel=sel,out=out[15]);
 }
 ```
-Or8Way
+# Or8Way
 
+```
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -168,3 +169,33 @@ CHIP Or8Way {
     Or(a=c,b=d,out=f);
     Or(a=e,b=f,out=out);
 }
+```
+
+# Mux8Way16
+```
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux8Way16.hdl
+
+/**
+* 8-way 16-bit multiplexor:
+* out = a if sel == 000
+*       b if sel == 001
+*       etc.
+*       h if sel == 111
+*/
+
+CHIP Mux8Way16 {
+    IN a[16], b[16], c[16], d[16],
+    e[16], f[16], g[16], h[16],
+    sel[3];
+    OUT out[16];
+
+    PARTS:
+    // Put your code here:
+    Mux4Way16(a=a, b=b, c=c, d=d, sel[0]=sel[0], sel[1]=sel[1], out=s);
+    Mux4Way16(a=e, b=f, c=g, d=h, sel[0]=sel[0], sel[1]=sel[1], out=t);
+    Mux16(a=s, b=t, sel=sel[2], out=out);
+}
+```
