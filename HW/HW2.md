@@ -1,5 +1,5 @@
 # NOT16
-
+```
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -33,3 +33,4 @@ CHIP Not16 {
     Not(in=in[14],out=out[14]);
     Not(in=in[15],out=out[15]);
 }
+```
