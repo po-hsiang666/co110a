@@ -199,3 +199,58 @@ CHIP Mux8Way16 {
     Mux16(a=s, b=t, sel=sel[2], out=out);
 }
 ```
+
+# DMux4Way
+```
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/DMux4Way.hdl
+
+/**
+* 4-way demultiplexor:
+* {a, b, c, d} = {in, 0, 0, 0} if sel == 00
+*                {0, in, 0, 0} if sel == 01
+*                {0, 0, in, 0} if sel == 10
+*                {0, 0, 0, in} if sel == 11
+*/
+
+CHIP DMux4Way {
+    IN in, sel[2];
+    OUT a, b, c, d;
+
+    PARTS:
+    // Put your code here:
+    DMux(in=in, sel=sel[1], a=p, b=q);
+    DMux(in=p, sel=sel[0], a=a, b=b);
+    DMux(in=q, sel=sel[0], a=c, b=d);
+    
+}
+```
+
+# DMux8Way
+```
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/DMux8Way.hdl
+
+/**
+* 8-way demultiplexor:
+* {a, b, c, d, e, f, g, h} = {in, 0, 0, 0, 0, 0, 0, 0} if sel == 000
+*                            {0, in, 0, 0, 0, 0, 0, 0} if sel == 001
+*                            etc.
+*                            {0, 0, 0, 0, 0, 0, 0, in} if sel == 111
+*/
+
+CHIP DMux8Way {
+    IN in, sel[3];
+    OUT a, b, c, d, e, f, g, h;
+
+    PARTS:
+    // Put your code here:
+    DMux(in=in, sel=sel[2], a=p, b=q);
+    DMux4Way(in=p, sel[0]=sel[0], sel[1]=sel[1], a=a, b=b, c=c, d=d);
+    DMux4Way(in=q, sel[0]=sel[0], sel[1]=sel[1], a=e, b=f, c=g, d=h);
+}
+```
