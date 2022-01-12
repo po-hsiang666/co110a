@@ -58,6 +58,8 @@ CHIP Register {
     Bit(in=in[15],load=load,out=out[15]);
 }
 ```
+![image](https://user-images.githubusercontent.com/81726807/149163630-81c1a44f-fee1-4c98-b43a-a4685e7ef48d.png)
+
 # RAM8
 ```
 // This file is part of www.nand2tetris.org
