@@ -255,3 +255,6 @@ CHIP DMux8Way {
 }
 ```
 ![image](https://user-images.githubusercontent.com/81726807/149162445-91ddd529-979a-4251-92af-8faa1ca091be.png)
+
+![image](https://user-images.githubusercontent.com/81726807/149163186-2f8937e1-1bab-42ca-a7f7-9497e1ec44b4.png)
+
