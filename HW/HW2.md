@@ -1,4 +1,4 @@
-# NOT16
+# NOT16圖是自己畫的
 ```
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
