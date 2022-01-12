@@ -36,10 +36,8 @@ CHIP Computer {
     PARTS:
     // Put your code here:
 
-    ROM32K(address=pc ,out=instruction); //輸出對應pc的指令
+    ROM32K(address=pc ,out=instruction); 
     
-    CPU(inM=Mo ,instruction=instruction ,reset=reset ,outM=Mi ,writeM=writeM ,addressM=Adata ,pc=pc); //接收並執行指令
-
-    Memory(in=Mi ,load=writeM ,address=Adata ,out=Mo); //輸出對應位置數據及接受CPU改動
-}
+    CPU(inM=Mo ,instruction=instruction ,reset=reset ,outM=Mi ,writeM=writeM ,addressM=Adata ,pc=pc); 
+    Memory(in=Mi ,load=writeM ,address=Adata ,out=Mo); 
 ```
