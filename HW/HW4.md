@@ -127,4 +127,8 @@ CHIP ALU {
    Not(in=o2,out=zr);
 }
 
+
 ```
+
+![image](https://user-images.githubusercontent.com/81726807/149163827-57a4d3a3-ecf9-44e8-9eb4-2fbd475fff93.png)
+
