@@ -1,4 +1,4 @@
-# HalfAdder
+# HalfAdder 圖是自己畫的
 
 ```
 // This file is part of www.nand2tetris.org
@@ -102,3 +102,6 @@ CHIP Inc16 {
 Add16(a=in,b[0]=true,out=out);
 }
 ```
+
+![image](https://user-images.githubusercontent.com/81726807/149163347-91c9027c-86dc-4492-83d3-653bd37e8f52.png)
+
