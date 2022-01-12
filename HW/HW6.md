@@ -30,6 +30,8 @@ CHIP RAM64 {
     Mux8Way16(a=r0,b=r1,c=r2,d=r3,e=r4,f=r5,g=r6,h=r7,sel=address[3..5],out=out);
 }
 ```
+![RAM64](https://user-images.githubusercontent.com/81726807/149163956-2a96dddb-5c12-4e79-ac1b-63a1822369dc.png)
+
 
 # RAM512
 ```
@@ -63,11 +65,12 @@ CHIP RAM512 {
     Mux8Way16(a=r0,b=r1,c=r2,d=r3,e=r4,f=r5,g=r6,h=r7,sel=address[6..8],out=out);
 }
 ```
+![RAM512](https://user-images.githubusercontent.com/81726807/149164118-2fed5db4-cc69-43cb-a300-a5c4b6e62b12.png)
+
 # RAM4K
 
 ```
 // This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/03/b/RAM4K.hdl
 
@@ -95,7 +98,8 @@ CHIP RAM4K {
     RAM512(in=in,load=DM7,address=address[0..8],out=r7);
     Mux8Way16(a=r0,b=r1,c=r2,d=r3,e=r4,f=r5,g=r6,h=r7,sel=address[9..11],out=out);
 }
-```
+```![RAM4K](https://user-images.githubusercontent.com/81726807/149164157-0c54cc06-64d0-4fb5-aab3-5e27e5da4c37.png)
+
 
 # RAM16K
 ```
@@ -125,6 +129,7 @@ CHIP RAM16K {
     Mux4Way16(a=r0,b=r1,c=r2,d=r3,sel=address[12..13],out=out);
 }
 ```
+![RAM16K](https://user-images.githubusercontent.com/81726807/149164178-048a3597-1883-4c63-ad00-2c303ca6233c.png)
 
 # PC
 ```
@@ -151,6 +156,8 @@ CHIP PC {
     Mux16(a=PC,b=PCI,sel=inc,out=PCN);
     Mux16(a=PCN,b=in,sel=load,out=Load);
     Mux16(a=Load,b=false,sel=reset,out=Re);
-    Register(in=Re,load=true,out=PC,out=out);
+  
+ter(in=Re,load=true,out=PC,out=out);
 }
 ```
+  Regis![unknown](https://user-images.githubusercontent.com/81726807/149164230-17115be2-9097-4e07-94c7-ddf4b61d9bac.png)
