@@ -148,3 +148,6 @@ CHIP DMux {
     And(a=in, b=sel, out=b);
 }
 ```
+
+![image](https://user-images.githubusercontent.com/81726807/149161968-8fc29214-b660-4bb3-af0c-185b8213a98f.png)
+
