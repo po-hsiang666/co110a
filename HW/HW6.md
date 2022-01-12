@@ -98,7 +98,8 @@ CHIP RAM4K {
     RAM512(in=in,load=DM7,address=address[0..8],out=r7);
     Mux8Way16(a=r0,b=r1,c=r2,d=r3,e=r4,f=r5,g=r6,h=r7,sel=address[9..11],out=out);
 }
-```![RAM4K](https://user-images.githubusercontent.com/81726807/149164157-0c54cc06-64d0-4fb5-aab3-5e27e5da4c37.png)
+```
+![RAM4K](https://user-images.githubusercontent.com/81726807/149164157-0c54cc06-64d0-4fb5-aab3-5e27e5da4c37.png)
 
 
 # RAM16K
@@ -160,4 +161,4 @@ CHIP PC {
 ter(in=Re,load=true,out=PC,out=out);
 }
 ```
-  Regis![unknown](https://user-images.githubusercontent.com/81726807/149164230-17115be2-9097-4e07-94c7-ddf4b61d9bac.png)
+![unknown](https://user-images.githubusercontent.com/81726807/149164230-17115be2-9097-4e07-94c7-ddf4b61d9bac.png)
