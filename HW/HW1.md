@@ -1,4 +1,4 @@
-# AND
+# AND 圖片都是自己畫的
 
 ```
 // This file is part of www.nand2tetris.org
