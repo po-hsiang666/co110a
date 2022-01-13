@@ -1,10 +1,5 @@
 # RAM64
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/03/a/RAM64.hdl
-
 /**
 * Memory of 64 registers, each 16 bit-wide. Out holds the value
 * stored at the memory location specified by address. If load==1, then 
@@ -35,11 +30,6 @@ CHIP RAM64 {
 
 # RAM512
 ```
-// This file is part of the materials accompanying the book 
-// "The Elements of Computing Systems" by Nisan and Schocken, 
-// MIT Press. Book site: www.idc.ac.il/tecs
-// File name: projects/03/b/RAM512.hdl
-
 /**
 * Memory of 512 registers, each 16 bit-wide. Out holds the value
 * stored at the memory location specified by address. If load==1, then 
@@ -70,10 +60,6 @@ CHIP RAM512 {
 # RAM4K
 
 ```
-// This file is part of www.nand2tetris.org
-// by Nisan and Schocken, MIT Press.
-// File name: projects/03/b/RAM4K.hdl
-
 /**
 * Memory of 4K registers, each 16 bit-wide. Out holds the value
 * stored at the memory location specified by address. If load==1, then 
@@ -104,11 +90,6 @@ CHIP RAM4K {
 
 # RAM16K
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/03/b/RAM16K.hdl
-
 /**
 * Memory of 16K registers, each 16 bit-wide. Out holds the value
 * stored at the memory location specified by address. If load==1, then 
@@ -134,10 +115,6 @@ CHIP RAM16K {
 
 # PC
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/03/a/PC.hdl
 
 /**
  * A 16-bit counter with load and reset control bits.
