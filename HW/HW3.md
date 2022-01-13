@@ -1,11 +1,6 @@
-# HalfAdder 圖是自己畫的
+# HalfAdder 
 
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/02/HalfAdder.hdl
-
 /**
 * Computes the sum of two bits.
 */
@@ -24,11 +19,6 @@ CHIP HalfAdder {
 
 # FullAdder
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/02/FullAdder.hdl
-
 /**
 * Computes the sum of three bits.
 */
@@ -48,9 +38,6 @@ CHIP FullAdder {
 
 # Add16 
 ```
-
-// This file is part of www.nand2tetris.org // and the book "The Elements of Computing Systems" // by Nisan and Schocken, MIT Press. // File name: projects/02/Adder16.hdl
-
 /**
 * Adds two 16-bit values.
 * The most significant carry bit is ignored.
@@ -83,11 +70,6 @@ FullAdder(a=a[15],b=b[15],c=carry14,sum=out[15],carry=carry15);
 # Inc16
 
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/02/Inc16.hdl
-
 /**
 * 16-bit incrementer:
 * out = in + 1 (arithmetic addition)
