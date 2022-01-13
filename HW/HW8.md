@@ -64,3 +64,5 @@ Or16(a=false, b=instruction, out[15]=isC,out[12]=aa,out[11]=c1,out[10]=c2,out[9]
     PC(in=ra,load=pcload,inc=true,reset=reset,out[0..14]=pc);
 }
 ```
+![image](https://user-images.githubusercontent.com/81726807/149296647-d17c3b46-c37d-43f6-9de6-ad5dc5b8ecd3.png)
+## 來源:https://www.itread01.com/content/1548693009.html
