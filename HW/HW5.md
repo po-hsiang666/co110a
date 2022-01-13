@@ -1,10 +1,5 @@
 # Bit
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/03/a/Bit.hdl
-
 /**
  * 1-bit register:
  * If load[t] == 1 then out[t+1] = in[t]
@@ -62,11 +57,6 @@ CHIP Register {
 
 # RAM8
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/03/a/RAM8.hdl
-
 /**
 * Memory of 8 registers, each 16 bit-wide. Out holds the value
 * stored at the memory location specified by address. If load==1, then 
