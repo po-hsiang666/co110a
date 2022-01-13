@@ -41,3 +41,4 @@ CHIP Computer {
     CPU(inM=Mo ,instruction=instruction ,reset=reset ,outM=Mi ,writeM=writeM ,addressM=Adata ,pc=pc); 
     Memory(in=Mi ,load=writeM ,address=Adata ,out=Mo); 
 ```
+![image0](https://user-images.githubusercontent.com/81726807/149296469-0e7e9963-7ede-4a87-b9ca-d3ec4c4672bb.jpg)
