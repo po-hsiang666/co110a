@@ -1,40 +1,13 @@
 # CPU
 
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/05/CPU.hdl
-
-/**
-* The Hack CPU (Central Processing unit), consisting of an ALU,
-* two registers named A and D, and a program counter named PC.
-* The CPU is designed to fetch and execute instructions written in 
-* the Hack machine language. In particular, functions as follows:
-* Executes the inputted instruction according to the Hack machine 
-* language specification. The D and A in the language specification
-* refer to CPU-resident registers, while M refers to the external
-* memory location addressed by A, i.e. to Memory[A]. The inM input 
-* holds the value of this location. If the current instruction needs 
-* to write a value to M, the value is placed in outM, the address 
-* of the target location is placed in the addressM output, and the 
-* writeM control bit is asserted. (When writeM==0, any value may 
-* appear in outM). The outM and writeM outputs are combinational: 
-* they are affected instantaneously by the execution of the current 
-* instruction. The addressM and pc outputs are clocked: although they 
-* are affected by the execution of the current instruction, they commit 
-* to their new values only in the next time step. If reset==1 then the 
-* CPU jumps to address 0 (i.e. pc is set to 0 in next time step) rather 
-* than to the address resulting from executing the current instruction. 
-*/
-
 CHIP CPU {
 
     IN  inM[16],         // M value input  (M = contents of RAM[A])
         instruction[16], // Instruction for execution
         reset;           // Signals whether to re-start the current
-                        // program (reset==1) or continue executing
-                        // the current program (reset==0).
+                         // program (reset==1) or continue executing
+                         // the current program (reset==0).
 
     OUT outM[16],        // M value output
         writeM,          // Write to M? 
@@ -43,35 +16,51 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
-
-    Mux16(a=instruction, b=aluOut, sel=instruction[15], out=CorA);
-
-    //Aregister-c
-    And(a=instruction[5], b=instruction[15], out=Cd1);
-    Not(in=instruction[15], out=NC);
-    Or(a=NC, b=Cd1, out=loadA);
-    ARegister(in=CorA, load=loadA, out=A, out[0..14]=addressM);
-
-    Mux16(a=A, b=inM, sel=instruction[12], out=AorM);
-
-    //Dregister-c
-    And(a=instruction[15], b=instruction[4], out=loadD);
-    DRegister(in=aluOut, load=loadD, out=D);
-
-    ALU(x=D, y=AorM, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=outM, out=aluOut, zr=zr, ng=ng);
+Or16(a=false, b=instruction, out[15]=isC,out[12]=aa,out[11]=c1,out[10]=c2,out[9]=c3,out[8]=c4,out[7]=c5,out[6]=c6,out[5]=d1,out[4]=d2,out[3]=d3,out[2]=j1,out[1]=j2,out[0]=j3);
+    Not(in=isC,out=isA);
+    //amux
     
-    //writeM-c
-    And(a=instruction[15], b=instruction[3], out=writeM);
+    Mux16(a=instruction,b=aluout,sel=isC,out=amux);
+    //ARegister
+    And(a=isC,b=d1,out=cxd0);
+    Or(a=isA,b=cxd0,out=aorcxd1);
+    
+    //mux a m
+    Mux16(a=ra,b=inM,sel=aa,out=inmmuxra);
+    //DRegister
+    And(a=d2,b=isC,out=dd2);
+    
 
-    //PC-c
-    Or(a=zr, b=ng, out=ZRorNG); //is input zero or negative
-    Not(in=ZRorNG, out=GT); //input is not zero and negative (greater than)
-    And(a=GT, b=instruction[0], out=JGT);
-    And(a=zr, b=instruction[1], out=JEQ);
-    Or(a=JEQ, b=JGT, out=JGE);
-    And(a=ng, b=instruction[2], out=JLT);
-    Or(a=JLT, b=JGE, out=Pass);
-    And(a=instruction[15], b=Pass, out=forPC);
-    PC(in=A, load=forPC, inc=true, reset=reset, out[0..14]=pc);
+    // jumps
+
+    //Or(a=alung,b=aluzr,out=dau);
+    //Not(in=dau,out=po);
+    
+    //Xor(a=j1,b=alung,out=nx1);
+    //Xor(a=j2,b=aluzr,out=nx2);
+    //Xor(a=j3,b=po,out=nx3);
+    //Not(in=nx1,out=x1);
+    //Not(in=nx2,out=x2);
+    //Not(in=nx3,out=x3);
+    //And(a=x1,b=x2,out=x4);
+    //And(a=x3,b=x4,out=nnxend);
+
+    Not(in=alung,out=notng);//偷抄
+    Not(in=aluzr,out=notzr);
+    And(a=notng,b=notzr,out=PO);
+    
+    And(a=j1,b=alung,out=out1);
+    And(a=j2,b=aluzr,out=out2);
+    And(a=j3,b=PO,out=out3);
+    Or(a=out1,b=out2,out=out4);
+    Or(a=out3,b=out4,out=jnj);
+    //pc
+    And(a=isC,b=jnj,out=pcload);
+    //end
+    ARegister(in=amux,load=aorcxd1,out=ra,out[0..14]=addressM);
+    ALU(x=rd,y=inmmuxra,zx=c1,nx=c2,zy=c3,ny=c4,f=c5,no=c6,out=aluout,out=outM,zr=aluzr,ng=alung);
+    DRegister(in=aluout,load=dd2,out=rd);
+    And(a=isC,b=d3,out=writeM);
+    PC(in=ra,load=pcload,inc=true,reset=reset,out[0..14]=pc);
 }
 ```
