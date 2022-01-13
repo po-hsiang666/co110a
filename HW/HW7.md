@@ -1,4 +1,5 @@
-# 這次作業是複製陳育誠學長的已經過本人同意
+這次作業請教過育誠學長後依然不懂所以直接複製
+
 # 網址: https://github.com/cycyucheng1010/co109a/blob/master/20201123HW9.md
 # MULT
 ```
