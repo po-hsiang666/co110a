@@ -1,10 +1,5 @@
 # NOT16圖是自己畫的
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/Not16.hdl
-
 /**
 * 16-bit Not:
 * for i=0..15: out[i] = not in[i]
@@ -37,11 +32,6 @@ CHIP Not16 {
 
 # AND16
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/And16.hdl
-
 /**
 * 16-bit bitwise And:
 * for i = 0..15: out[i] = (a[i] and b[i])
@@ -75,7 +65,6 @@ CHIP And16 {
 # Or16 
 
 ```
-// This file is part of www.nand2tetris.org // and the book "The Elements of Computing Systems" // by Nisan and Schocken, MIT Press. // File name: projects/01/Or16.hd
 /**
 * 16-bit bitwise Or:
 * for i = 0..15 out[i] = (a[i] or b[i])
@@ -107,11 +96,6 @@ CHIP Or16 {
 ```
 # Mux16
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/Mux16.hdl
-
 /**
 * 16-bit multiplexor: 
 * for i = 0..15 out[i] = a[i] if sel == 0 
@@ -145,11 +129,6 @@ CHIP Mux16 {
 # Or8Way
 
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/Or8Way.hdl
-
 /**
 * 8-way Or: 
 * out = (in[0] or in[1] or ... or in[7])
@@ -173,11 +152,6 @@ CHIP Or8Way {
 
 # Mux8Way16
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/Mux8Way16.hdl
-
 /**
 * 8-way 16-bit multiplexor:
 * out = a if sel == 000
@@ -202,11 +176,6 @@ CHIP Mux8Way16 {
 
 # DMux4Way
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/DMux4Way.hdl
-
 /**
 * 4-way demultiplexor:
 * {a, b, c, d} = {in, 0, 0, 0} if sel == 00
@@ -230,11 +199,6 @@ CHIP DMux4Way {
 
 # DMux8Way
 ```
-// This file is part of www.nand2tetris.org
-// and the book "The Elements of Computing Systems"
-// by Nisan and Schocken, MIT Press.
-// File name: projects/01/DMux8Way.hdl
-
 /**
 * 8-way demultiplexor:
 * {a, b, c, d, e, f, g, h} = {in, 0, 0, 0, 0, 0, 0, 0} if sel == 000
